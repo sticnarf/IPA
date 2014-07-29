@@ -9,3 +9,10 @@ The website is still in development. Issues and pull requests are welcome.
 ## How to deploy
 
 The code here includes no configuration for production.
+
+Following configurations are needed.
+
+```bash
+rake secret >> .env
+rake assets:precompile
+```
