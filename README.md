@@ -12,7 +12,7 @@ If you've just cloned the repository, you need to run:
 
 ```bash
 $ bundle install
-$ (echo "SECRET_KEY_BASE: \c" & rake secret) >> .env
+$ (echo -e "SECRET_KEY_BASE: \c" & rake secret) >> .env
 $ rake assets:precompile
 ```
 
