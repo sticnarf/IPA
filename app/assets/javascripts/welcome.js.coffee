@@ -5,6 +5,30 @@ update_height = ->
   if $("#main").length > 0
     $("#main").height($("body").height() - $("header").height() - $("footer").height())
 
-update_height()
-$(window).resize ->
+move_pointer = ->
+  $("header nav a").mouseenter ->
+    $("#container .pointer").animate({
+      left: $(this).offset().left - 5 + $(this).width() / 2
+    }, {
+      queue: false;
+      duration: 100;
+    })
+  $("header nav").mouseleave ->
+    $("#container .pointer").animate({
+      left: $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2
+    }, {
+      queue: false;
+      duration: 200;
+    })
+
+ready = ->
+  $("aside .pointer").css("left", $("aside .active").offset().left - 10)
+  $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2)
+  $("#container .pointer").css("left", $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2)
   update_height()
+  move_pointer()
+  $(window).resize ->
+    update_height()
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

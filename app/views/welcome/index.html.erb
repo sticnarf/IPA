@@ -1,22 +1,41 @@
 <header>
-  <div id="logo"><%= image_tag "logo.png" %></div>
+  <div id="logo"><%= image_tag "logo.svg" %></div>
   <div>
     <div id="full_name"><em>I</em>nformation <em>P</em>hotography <em>A</em>ssociation</div>
     <nav>
       <ul>
-        <li><a href="#">简介</a></li>
-        <li><a href="#">视频</a></li>
-        <li><a href="#">摄影</a></li>
-        <li><a href="#">活动</a></li>
-        <li><a href="#">微电影</a></li>
+        <li><a class="active">简介</a></li>
+        <li><a>视频</a></li>
+        <li><a>摄影</a></li>
+        <li><a>活动</a></li>
+        <li><a>微电影</a></li>
       </ul>
     </nav>
   </div>
 </header>
 <div id="main">
   <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
+      <polygon points="0,0 5,5 0,10"/>
+    </svg>
+    <ul id="first_class">
+      <li><a class="a first_li active">社团概况</a></li>
+      <li>
+        <span class="first_li">部门介绍</span>
+        <ul id="second_class">
+          <li><a>摄影部</a></li>
+          <li><a>后期部</a></li>
+          <li><a>宣传部</a></li>
+          <li><a>硬件程序部</a></li>
+          <li><a>微电影部</a></li>
+        </ul>
+      </li>
+    </ul>
   </aside>
   <div id="container">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
+      <polygon points="0,0 10,0 5,5"/>
+    </svg>
   </div>
 </div>
 <footer>
