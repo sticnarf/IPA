@@ -7,6 +7,8 @@ update_position = ->
   $("aside .pointer").css("left", $("aside .active").offset().left - 10)
   $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2)
   $("#container .pointer").css("left", $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2)
+  $(".owl-pagination").css("top", $(".owl-carousel").offset().top + $(".owl-item img").height() - $(".owl-pagination").height())
+  $(".owl-pagination").css("left", $(".owl-carousel").offset().left + $(".owl-item img").width() + 25)
 
 move_pointer = ->
   $("header nav a").mouseenter ->
@@ -24,10 +26,25 @@ move_pointer = ->
       duration: 200;
     })
 
+update_size = ->
+  $(".item").find("img").height($("body").height() - 222)
+  $(".item").find("p").height($(".item").find("img").height() - $(".owl-pagination").height() - 25)
+  $(".item").find("p").width($("#container").width() - $(".item").find("img").width() - 301)
+
 ready = ->
-  update_position()
+  $(".owl-carousel").owlCarousel {
+    autoPlay: 5000,
+    singleItem: true,
+    paginationNumbers: true,
+    transitionStyle: "fade"
+  }
   move_pointer()
+  update_size()
+  update_position()
   $(window).resize ->
+    update_size()
+    update_position()
+  $("aside").scroll ->
     update_position()
 
 $(document).ready(ready)

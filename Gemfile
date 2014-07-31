@@ -30,6 +30,8 @@ gem 'foundation-rails', '~> 5.3.1.0'
 
 gem 'dotenv-rails', '~> 0.11.1'
 
+gem 'owlcarousel-rails', :git => 'https://github.com/wormful/owlcarousel-rails.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

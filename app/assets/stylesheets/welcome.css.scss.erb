@@ -17,13 +17,16 @@
 body {
   background-color: rgb(58, 71, 75);
   color: #FFF;
+  overflow: hidden;
   height: 100%;
 }
 
 #logo {
+  position: absolute;
   margin: 0;
-  margin-left: 78px;
-  float: left;
+  background-color: rgb(58, 71, 75);
+  padding-left: 78px;
+  z-index: 1000;
   img {
     height: 90px;
     width: 150px;
@@ -74,6 +77,7 @@ header {
     padding-top: 83px;
     padding-left: 78px;
     color: rgb(58, 71, 75);
+    overflow: scroll;
     .pointer {
       fill: rgb(67, 150, 234);
       width: 5px;
@@ -107,6 +111,25 @@ header {
       width: 10px;
       height: 5px;
     }
+    .owl-carousel {
+      position: absolute;
+      top: 135px;
+      left: 276px;
+      .item {
+        img, p {
+          float: left;
+        }
+        p {
+          font-family: "华文黑体", "黑体", sans-serif;
+          margin-left: 25px;
+          margin-top: 25px;
+          overflow: auto;
+        }
+      }
+      .owl-pagination {
+        position: fixed;
+      }
+    }
   }
 }
 
@@ -127,6 +150,7 @@ footer {
 
 .pointer {
   position: absolute;
+  z-index: 1;
 }
 
 .active {
