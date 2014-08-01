@@ -13,6 +13,7 @@ If you've just cloned the repository, you need to run:
 ```bash
 $ bundle install
 $ (echo -e "SECRET_KEY_BASE: \c" && rake secret) >> .env
+$ rake db:migrate RAILS_ENV=production
 $ rake assets:precompile RAILS_ENV=production
 ```
 
@@ -21,6 +22,7 @@ Or you just want to update, run:
 ```bash
 $ git pull
 $ bundle install
+$ rake db:migrate RAILS_ENV=production
 $ rake assets:precompile RAILS_ENV=production
 ```
 
