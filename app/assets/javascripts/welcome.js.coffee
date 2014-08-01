@@ -5,10 +5,11 @@ update_position = ->
   if $("#main").length > 0
     $("#main").height($("body").height() - $("header").height() - $("footer").height())
   $("aside .pointer").css("left", $("aside .active").offset().left - 10)
-  $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2)
+  $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2 - 5)
   $("#container .pointer").css("left", $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2)
   $(".owl-pagination").css("top", $(".owl-carousel").offset().top + $(".owl-item img").height() - $(".owl-pagination").height())
   $(".owl-pagination").css("left", $(".owl-carousel").offset().left + $(".owl-item img").width() + 25)
+  $("#panel_nav").css("left", $("body").width() - $("#panel_nav").width() - 30)
 
 move_pointer = ->
   $("header nav a").mouseenter ->

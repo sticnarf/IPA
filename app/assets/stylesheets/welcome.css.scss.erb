@@ -21,8 +21,15 @@ body {
   height: 100%;
 }
 
+#uinfo {
+  position: fixed;
+  right: 0;
+  top : 0;
+  margin: 5px 15px;
+}
+
 #logo {
-  position: absolute;
+  position: fixed;
   margin: 0;
   background-color: rgb(58, 71, 75);
   padding-left: 78px;
@@ -53,6 +60,10 @@ header {
     position: absolute;
     left: 40%;
     bottom: 0;
+    #panel_nav {
+      position: fixed;
+      top: 60px;
+    }
     ul {
       margin: 0;
       list-style: none;
@@ -112,7 +123,7 @@ header {
       height: 5px;
     }
     .owl-carousel {
-      position: absolute;
+      position: fixed;
       top: 135px;
       left: 276px;
       .item {
@@ -136,11 +147,11 @@ header {
 footer {
   width: 100%;
   height: 52px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   small {
     color: rgb(80, 80, 80);
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
     text-align: center;
@@ -149,7 +160,7 @@ footer {
 }
 
 .pointer {
-  position: absolute;
+  position: fixed;
   z-index: 1;
 }
 

@@ -1,5 +1,12 @@
 <header>
   <div id="logo"><%= image_tag "logo.svg" %></div>
+  <div id="uinfo">
+    <% if user_signed_in? %>
+    欢迎，<%= current_user.email %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
+    <% else %>
+    <%= link_to "注册", user_registration_path %> | <%= link_to "登录", new_user_session_path %>
+    <% end %>
+  </div>
   <div>
     <div id="full_name"><em>I</em>nformation <em>P</em>hotography <em>A</em>ssociation</div>
     <nav>
@@ -9,6 +16,9 @@
         <li><a>摄影</a></li>
         <li><a>微电影</a></li>
         <li><a>活动</a></li>
+        <% if user_signed_in? %>
+        <li id="panel_nav"><a>社员面板</a></li>
+        <% end %>
       </ul>
     </nav>
   </div>
@@ -28,7 +38,6 @@
           <li><a>宣传部</a></li>
           <li><a>硬件程序部</a></li>
           <li><a>微电影部</a></li>
-          <li><a>社员面板</a></li>
         </ul>
       </li>
     </ul>
