@@ -12,7 +12,12 @@
 </head>
 
 <body class="<%= controller_name %>">
-  <%= yield %>
+  <%= render partial: 'shared/header' %>
+  <div id="main">
+    <%= render partial: 'shared/side' %>
+    <%= render partial: 'shared/container' %>
+  </div>
+  <%= render partial: 'shared/footer' %>
   <%= javascript_include_tag "application" %>
 </body>
 </html>

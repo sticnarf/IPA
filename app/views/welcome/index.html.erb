@@ -1,121 +1,84 @@
-<header>
-  <div id="logo"><%= image_tag "logo.svg" %></div>
-  <div id="uinfo">
-    <% if user_signed_in? %>
-    欢迎，<%= current_user.email %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
-    <% else %>
-    <%= link_to "注册", new_user_registration_path %> | <%= link_to "登录", new_user_session_path %>
-    <% end %>
-  </div>
-  <div>
-    <div id="full_name"><%= image_tag "full.svg" %></div>
-    <nav>
-      <ul>
-        <li><a class="active">简介</a></li>
-        <li><a>视频</a></li>
-        <li><a>摄影</a></li>
-        <li><a>微电影</a></li>
-        <li><a>活动</a></li>
-        <% if user_signed_in? %>
-        <li id="panel_nav"><a>社员面板</a></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
-<div id="main">
-  <aside>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
-      <polygon points="0,0 5,5 0,10"/>
-    </svg>
-    <ul id="first_class">
-      <li><a class="a first_li active">社团概况</a></li>
-      <li>
-        <span class="first_li">部门介绍</span>
-        <ul id="second_class">
-          <li><a>摄影部</a></li>
-          <li><a>后期部</a></li>
-          <li><a>宣传部</a></li>
-          <li><a>硬件程序部</a></li>
-          <li><a>微电影部</a></li>
-        </ul>
-      </li>
+<% provide(:active, 'intro') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><a class="a first_li active">社团概况</a></li>
+  <li>
+    <span class="first_li">部门介绍</span>
+    <ul id="second_class">
+      <li><a>摄影部</a></li>
+      <li><a>后期部</a></li>
+      <li><a>宣传部</a></li>
+      <li><a>硬件程序部</a></li>
+      <li><a>微电影部</a></li>
     </ul>
-  </aside>
-  <div id="container">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
-      <polygon points="0,0 10,0 5,5"/>
-    </svg>
-    <div class="owl-carousel owl-theme">
-      <div class="item">
-        <%= image_tag "1.jpg" %>
-        <p>
-          IPA（Information Photography Association，信息技术与摄影协会）<br>
-          是以摄影摄像和后期制作为主的综合性学生社团，<br>
-          “无锡市十佳社团”之一。<br>
-          IPA积极组织参与校内外的活动，<br>
-          在全市中学有着广泛的影响力。<br>
-          作为无锡市第一中学的主要社团，<br>
-          IPA在校内的各项活动中都发挥着重要的作用，<br>
-          为学校提供了大量精彩的影像资料，<br>
-          也为同学留下了珍贵的活动纪念，<br>
-          彰显当代中学生积极向上，
-          <br>
-          全面发展的精神风貌。
-        </p>
-      </div>
-      <div class="item">
-        <%= image_tag "2.jpg" %>
-        <p>
-          IPA最初为研究性课题组，于2006年月9成立，共有6名成员，<br>
-          在组长叶梓的组织下完成了对光盘制作与销售的研究，<br>
-          为后来IPA的成立与发展奠定了基础。<br>
-          之后该课题组成立了幻飘工作室，<br>
-          并于2007年2月创立幻飘社团，<br>
-          主要拍摄和记录校园活动。<br>
-          2010年7月，幻飘社团与ITU信息技术协会合并，<br>
-          更名为信息技术与摄影协会，英文简称IPA。<br>
-          在所有社员的共同努力下，<br>
-          合并后的IPA更加专业，更加成熟。
-        </p>
-      </div>
-      <div class="item">
-        <%= image_tag "3.jpg" %>
-        <p>
-          作为无锡一中最早创立的社团之一，<br>
-          IPA从未停止过前进的脚步，<br>
-          从只有几人的研究性课题组发展到拥有百余名成员的社团，<br>
-          逐步成长成为无锡市第一中学最成熟最强大的综合性社团，<br>
-          如今我们举办大型摄影展,制作《雕刻时光》光碟,编辑报纸，<br>
-          举办计算机比赛，维护学校网站，拍摄微电影。<br>
-          我们参加了各种全国科技创新大赛，并屡创佳绩。<br>
-          IPA不负众望，于2012年收获了“无锡市十佳社团”的荣誉。
-        </p>
-      </div>
-      <div class="item">
-        <%= image_tag "4.jpg" %>
-        <p>
-          IPA的每一的脚印都浸透着我们的汗水。<br>
-          因此，我们可以自豪的说，我们是IPA协会，我们是IPAers。<br>
-          就算世界有尽头，时间有终点，<br>
-          我们对生活的热爱，始终如一。<br>
-          年轻的心，充满了改变世界的信念；<br>
-          灵感的火花，灿烂烟火般上演；<br>
-          紧握的双手，绘出黑暗中等待的光线。<br>
-          一年有三百六十五个日子五十二万五千多分钟，<br>
-          一生有三十四亿五千六百七十八万九千下脉搏，<br>
-          我们始终相信的，不是人生的成功与否，<br>
-          而是IPA带给你的感动，叫永恒。<br>
-          过去一路的辉煌是由每一个努力认真的IPAers浇灌的成果，<br>
-          而未来道路上是的未知挑战，所有IPAers也将共同面对。<br>
-          摄影是基础，后期是升华，硬件程序是深度。<br>
-          IPA 玩的就是专业，IPAers追求的就是精益求精！<br>
-          让我们，打破规律的平庸，记录生活的精彩。<br>
-        </p>
-      </div>
-    </div>
+  </li>
+</ul>
+<% end %>
+<div class="owl-carousel owl-theme">
+  <div class="item">
+    <%= image_tag "1.jpg" %>
+    <p>
+      IPA（Information Photography Association，信息技术与摄影协会）<br>
+      是以摄影摄像和后期制作为主的综合性学生社团，<br>
+      “无锡市十佳社团”之一。<br>
+      IPA积极组织参与校内外的活动，<br>
+      在全市中学有着广泛的影响力。<br>
+      作为无锡市第一中学的主要社团，<br>
+      IPA在校内的各项活动中都发挥着重要的作用，<br>
+      为学校提供了大量精彩的影像资料，<br>
+      也为同学留下了珍贵的活动纪念，<br>
+      彰显当代中学生积极向上，
+      <br>
+      全面发展的精神风貌。
+    </p>
+  </div>
+  <div class="item">
+    <%= image_tag "2.jpg" %>
+    <p>
+      IPA最初为研究性课题组，于2006年月9成立，共有6名成员，<br>
+      在组长叶梓的组织下完成了对光盘制作与销售的研究，<br>
+      为后来IPA的成立与发展奠定了基础。<br>
+      之后该课题组成立了幻飘工作室，<br>
+      并于2007年2月创立幻飘社团，<br>
+      主要拍摄和记录校园活动。<br>
+      2010年7月，幻飘社团与ITU信息技术协会合并，<br>
+      更名为信息技术与摄影协会，英文简称IPA。<br>
+      在所有社员的共同努力下，<br>
+      合并后的IPA更加专业，更加成熟。
+    </p>
+  </div>
+  <div class="item">
+    <%= image_tag "3.jpg" %>
+    <p>
+      作为无锡一中最早创立的社团之一，<br>
+      IPA从未停止过前进的脚步，<br>
+      从只有几人的研究性课题组发展到拥有百余名成员的社团，<br>
+      逐步成长成为无锡市第一中学最成熟最强大的综合性社团，<br>
+      如今我们举办大型摄影展,制作《雕刻时光》光碟,编辑报纸，<br>
+      举办计算机比赛，维护学校网站，拍摄微电影。<br>
+      我们参加了各种全国科技创新大赛，并屡创佳绩。<br>
+      IPA不负众望，于2012年收获了“无锡市十佳社团”的荣誉。
+    </p>
+  </div>
+  <div class="item">
+    <%= image_tag "4.jpg" %>
+    <p>
+      IPA的每一的脚印都浸透着我们的汗水。<br>
+      因此，我们可以自豪的说，我们是IPA协会，我们是IPAers。<br>
+      就算世界有尽头，时间有终点，<br>
+      我们对生活的热爱，始终如一。<br>
+      年轻的心，充满了改变世界的信念；<br>
+      灵感的火花，灿烂烟火般上演；<br>
+      紧握的双手，绘出黑暗中等待的光线。<br>
+      一年有三百六十五个日子五十二万五千多分钟，<br>
+      一生有三十四亿五千六百七十八万九千下脉搏，<br>
+      我们始终相信的，不是人生的成功与否，<br>
+      而是IPA带给你的感动，叫永恒。<br>
+      过去一路的辉煌是由每一个努力认真的IPAers浇灌的成果，<br>
+      而未来道路上是的未知挑战，所有IPAers也将共同面对。<br>
+      摄影是基础，后期是升华，硬件程序是深度。<br>
+      IPA 玩的就是专业，IPAers追求的就是精益求精！<br>
+      让我们，打破规律的平庸，记录生活的精彩。<br>
+    </p>
   </div>
 </div>
-<footer>
-  <small>Copyright &copy; 2014 Information &amp; Photography Association. All rights reserved.</small>
-</footer>

@@ -1,0 +1,25 @@
+<header>
+  <div id="logo"><%= image_tag "logo.svg" %></div>
+  <div id="uinfo">
+    <% if user_signed_in? %>
+    欢迎，<%= current_user.email %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
+    <% else %>
+    <%= link_to "注册", new_user_registration_path %> | <%= link_to "登录", new_user_session_path %>
+    <% end %>
+  </div>
+  <div>
+    <div id="full_name"><%= image_tag "full.svg" %></div>
+    <nav active="<%= yield(:active) %>" id="header_nav">
+      <ul>
+        <li id="nav_intro"><%= link_to "简介", root_path %></li>
+        <li id="nav_video"><a>视频</a></li>
+        <li id="nav_photo"><a>摄影</a></li>
+        <li id="nav_movie"><a>微电影</a></li>
+        <li id="nav_activity"><a>活动</a></li>
+        <% if user_signed_in? %>
+        <li id="nav_user"><a>社员面板</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -16,11 +16,3 @@
 //= require owl.carousel
 //= require turbolinks
 //= require_tree .
-
-ready = function() {
-  eval("window."+$("body").attr("class")+"_ready()")
-}
-
-$(function(){ $(document).foundation(); });
-$(document).ready(ready)
-//$(document).on('page:load', ready)
