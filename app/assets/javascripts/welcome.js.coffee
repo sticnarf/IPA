@@ -6,21 +6,27 @@ update_position = ->
   $(".owl-pagination").css("left", $(".owl-carousel").offset().left + $(".owl-item img").width() + 25)
 
 update_size = ->
-  $(".item").find("img").height($("body").height() - 222)
+  $(".item").find("img").height($(window).height() - 222)
   $(".item").find("p").height($(".item").find("img").height() - $(".owl-pagination").height() - 25)
-  $(".item").find("p").width($("#container").width() - $(".item").find("img").width() - 301)
+  $(".item").find("p").width($("#container").width() - $(".item").find("img").width() - 93)
 
 update = ->
+  setTimeout( ->
+    update_size()
+  , 100)
+  setTimeout( ->
+    update_position()
+  , 100)
+
+window.welcome_ready = ->
+  # alert("welcome ready")
   $(".owl-carousel").owlCarousel {
     autoPlay: 5000,
     singleItem: true,
     paginationNumbers: true,
     transitionStyle: "fade"
   }
-  update_size()
-  update_position()
-
-window.welcome_ready = ->
-  setInterval( ->
+  update()
+  $(window).on('resize', ->
     update()
-  , 50)
+  )

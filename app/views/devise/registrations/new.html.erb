@@ -1,4 +1,10 @@
 <% provide(:active, 'user') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><a class="a first_li active">用户注册</a></li>
+  <li><a class="a first_li">用户登录</a></li>
+</ul>
+<% end %>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

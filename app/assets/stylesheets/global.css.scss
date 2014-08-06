@@ -1,0 +1,128 @@
+body {
+  background-color: rgb(58, 71, 75);
+  color: #FFF;
+  overflow: hidden;
+  height: 100%;
+}
+
+#uinfo {
+  position: fixed;
+  right: 0;
+  top : 0;
+  margin: 5px 15px;
+}
+
+#logo {
+  position: fixed;
+  margin: 0;
+  background-color: rgb(58, 71, 75);
+  padding-left: 78px;
+  z-index: 1000;
+  img {
+    height: 90px;
+    width: 150px;
+  }
+}
+#full_name {
+  margin-left: 245px;
+}
+
+header {
+  position: relative;
+  top: 0;
+  height: 90px;
+  nav {
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+    #nav_user {
+      visibility: hidden;
+    }
+    ul {
+      margin: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        a {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+#main {
+  aside {
+    width: 228px;
+    background-color: #FFF;
+    height: 100%;
+    float: left;
+    padding-top: 83px;
+    padding-left: 78px;
+    color: rgb(58, 71, 75);
+    overflow: auto;
+    .pointer {
+      fill: rgb(67, 150, 234);
+      width: 5px;
+      height: 10px;
+      left: 68px;
+    }
+    #first_class {
+      list-style: none;
+      margin: 0;
+      font-size: 14px;
+    }
+    .first_li {
+      font-size: 18px;
+    }
+    #first_class > li {
+      margin-bottom: 49px;
+    }
+
+    #second_class {
+      list-style: none;
+      li {
+        margin-top: 5px;
+      }
+    }
+  }
+  #container {
+    height: 100%;
+    background-color: rgb(153, 153, 153);
+    overflow-y: auto;
+    .pointer {
+      fill: rgb(58, 71, 75);
+      width: 10px;
+      height: 5px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 52px;
+  position: fixed;
+  bottom: 0;
+  small {
+    color: rgb(80, 80, 80);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 11px;
+  }
+}
+
+.pointer {
+  position: fixed;
+  z-index: 1;
+}
+
+.active {
+  color: rgb(67, 150, 234);
+}
+
+a:hover {
+  color: rgb(67, 150, 234);
+}

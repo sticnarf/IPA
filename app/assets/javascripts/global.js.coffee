@@ -21,15 +21,18 @@ move_pointer = ->
     })
 
 bind_listener_all = ->
-  $(window).resize ->
+  $(window).on('resize', ->
     $("#container .pointer").css("left", $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2)
     update_position_all()
-  $('aside').scroll ->
+  )
+  $('aside').on('scroll', ->
     update_position_all()
+  )
   move_pointer()
   $("#container .pointer").css("left", $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2)
 
 ready = ->
+  #alert("global ready")
   $("#nav_"+$("#header_nav").attr("active")).css("visibility", "visible").find("a").addClass("active").bind('click', false)
   update_position_all()
   bind_listener_all()
