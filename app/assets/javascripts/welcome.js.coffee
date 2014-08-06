@@ -54,5 +54,4 @@ update_all = ->
 
 window.welcome_ready = ->
   bind_listener()
-
   update_all()

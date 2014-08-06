@@ -18,7 +18,7 @@
 //= require_tree .
 
 ready = function() {
-  eval("window."+$("body").attr("controller")+"_ready()")
+  eval("window."+$("body").attr("class")+"_ready()")
 }
 
 $(function(){ $(document).foundation(); });
