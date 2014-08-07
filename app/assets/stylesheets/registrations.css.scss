@@ -1,0 +1,22 @@
+.registrations {
+  .title {
+    text-align: center;
+    margin: 50px 0;
+    h1{
+      color: #EEE;
+    }
+  }
+  form {
+    margin: 0 150px;
+  }
+  .radio {
+    input, label {
+      line-height: 1.734375rem;
+    }
+  }
+  .submit {
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+  }
+}

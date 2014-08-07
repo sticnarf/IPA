@@ -5,21 +5,49 @@
   <li><a class="a first_li">用户登录</a></li>
 </ul>
 <% end %>
-<h2>Sign up</h2>
-
+<div class="title"><h1>用户注册</h1></div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="row">
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Email
+        <%= f.email_field :email, autofocus: true %>
+      </label>
+    </div>
+    <div class="large-6 columns">
+      <label>姓名
+        <%= f.text_field :name %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>密码
+        <%= f.password_field :password, autocomplete: "off" %>
+      </label>
+    </div>
+    <div class="large-6 columns">
+      <label>重复密码
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns radio">
+      <label>是否为社员</label>
+      <%= f.radio_button :user_type, 'yes' %><label for="user_user_type_yes">是</label>
+      <%= f.radio_button :user_type, 'no', checked: true %><label for="user_user_type_no">不是</label>
+    </div>
+    <div class="large-6 columns">
+      <label>班级
+        <%= f.text_field :class_name, disabled: true %>
+      </label>
+    </div>
+  </div>
+  <div class="submit"><%= f.submit "注册", :class => 'button' %></div>
+</div>
+</div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<!-- <%= render "devise/shared/links" %> -->
