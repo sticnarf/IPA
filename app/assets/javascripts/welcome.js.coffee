@@ -34,3 +34,6 @@ window.welcome_ready = ->
   $(window).on('resize', ->
     update()
   )
+  $("div, img").on('resize', ->
+    update()
+  )
