@@ -1,8 +1,8 @@
 <header>
-  <div id="logo"><%= image_tag "logo.svg" %></div>
+  <div id="logo"><%= link_to image_tag("logo.svg"), root_path %></div>
   <div id="uinfo">
     <% if user_signed_in? %>
-    欢迎，<%= current_user.email %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
+    欢迎，<%= current_user.name %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
     <% else %>
     <%= link_to "注册", new_user_registration_path %> | <%= link_to "登录", new_user_session_path %>
     <% end %>
@@ -16,7 +16,12 @@
         <li id="nav_photo"><a>摄影</a></li>
         <li id="nav_movie"><a>微电影</a></li>
         <li id="nav_activity"><a>活动</a></li>
-        <li id="nav_user"><a>社员面板</a></li>
+        <li id="nav_user"
+        <% unless user_signed_in? %>
+        style="visibility: hidden;"
+        <% end %>
+        >
+        <a>社员面板</a></li>
       </ul>
     </nav>
   </div>

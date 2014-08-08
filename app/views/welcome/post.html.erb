@@ -1,0 +1,34 @@
+<% provide(:active, 'intro') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><%= link_to '社团概况', root_path, class: 'a first_li' %></li>
+  <li>
+    <span class="first_li">部门介绍</span>
+    <ul id="second_class">
+      <li><%= link_to '摄影部', photo_path %></li>
+      <li><a class="active">后期部</a></li>
+      <li><%= link_to '宣传部', pub_path %></li>
+      <li><%= link_to '硬件程序部', hp_path %></li>
+      <li><%= link_to '微电影部', mfilm_path %></li>
+    </ul>
+  </li>
+</ul>
+<% end %>
+<div class="img_container">
+  <div class="item">
+    <%= image_tag 'houqi.jpg' %>
+    <p>
+      灵感的火花迸溅的瞬间，<br>
+      就想给全世界添上不同的色调。 <br>
+      生活是纪实，那么我们所做的，<br>
+      就是打开了另一种可能性，<br>
+      来源于现实，却更胜于现实。<br>
+      你只要有<br>
+      一台电脑，一副键盘，一只鼠标，<br>
+      和一颗充满热爱的心脏，<br>
+      这里就是你的天地。<br>
+      我们的疆域里永远沒有绝对。<br>
+      后期部，期待你的加入。
+    </p>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<% provide(:active, 'intro') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><%= link_to '社团概况', root_path, class: 'a first_li' %></li>
+  <li>
+    <span class="first_li">部门介绍</span>
+    <ul id="second_class">
+      <li><%= link_to '摄影部', photo_path %></li>
+      <li><%= link_to '后期部', post_path %></li>
+      <li><%= link_to '宣传部', pub_path %></li>
+      <li><%= link_to '硬件程序部', hp_path %></li>
+      <li><a class="active">微电影部</a></li>
+    </ul>
+  </li>
+</ul>
+<% end %>
+<div class="img_container">
+  <div class="item">
+    <%= image_tag 'hp.jpg' %>
+    <p>
+      是IT精英？<br>
+      还是技术达人？<br>
+      或者根本沒有什么标准的定义，<br>
+      硬件部的你，一定有着非凡才能。<br>
+      研究新技术，做高科技产品，<br>
+      也许你的一小步，就改变了原来的生活。<br>
+      硬件部，在这里为前途无量的你，<br>
+      营造一个发挥才能的大空间。
+    </p>
+  </div>
+</div>

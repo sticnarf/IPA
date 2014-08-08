@@ -2,5 +2,13 @@
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
     <polygon points="0,0 10,0 5,5"/>
   </svg>
+  <% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+  <div data-alert class="alert-box <%= name.to_s %>">
+  <%= msg %>
+  <a href="#" class="close">&times;</a>
+  </div>
+  <% end %>
+  <% end %>
   <%= yield %>
 </div>

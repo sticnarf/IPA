@@ -1,0 +1,33 @@
+<% provide(:active, 'intro') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><%= link_to '社团概况', root_path, class: 'a first_li' %></li>
+  <li>
+    <span class="first_li">部门介绍</span>
+    <ul id="second_class">
+      <li><a class="active">摄影部</a></li>
+      <li><%= link_to '后期部', post_path %></li>
+      <li><%= link_to '宣传部', pub_path %></li>
+      <li><%= link_to '硬件程序部', hp_path %></li>
+      <li><%= link_to '微电影部', mfilm_path %></li>
+    </ul>
+  </li>
+</ul>
+<% end %>
+<div class="img_container">
+  <div class="item">
+    <%= image_tag 'sheying.jpg' %>
+    <p>
+      漫步于光影仙境中的我们，<br>
+      习惯用一只眼睛观察世界，<br>
+      用另一只眼睛，观察自己的心灵。<br>
+      世界纷纷扰扰什么是真实，<br>
+      也许在拿起相机的一刻开始，<br>
+      一切便有了答案:）。<br>
+      在这个世界里，<br>
+      沒有句点沒有界限沒有束缚，<br>
+      请按下快门，和我们一起，定格时间。 <br>
+      IPA摄影部，精彩永不褪色。
+    </p>
+  </div>
+</div>

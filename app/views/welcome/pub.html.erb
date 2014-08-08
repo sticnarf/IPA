@@ -1,0 +1,30 @@
+<% provide(:active, 'intro') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><%= link_to '社团概况', root_path, class: 'a first_li' %></li>
+  <li>
+    <span class="first_li">部门介绍</span>
+    <ul id="second_class">
+      <li><%= link_to '摄影部', photo_path %></li>
+      <li><%= link_to '后期部', post_path %></li>
+      <li><a class="active">宣传部</a></li>
+      <li><%= link_to '硬件程序部', hp_path %></li>
+      <li><%= link_to '微电影部', mfilm_path %></li>
+    </ul>
+  </li>
+</ul>
+<% end %>
+<div class="img_container">
+  <div class="item">
+    <%= image_tag 'xuanchuan.jpg' %>
+    <p>
+      在这个日新月异的时代，<br>
+      我们所做的，<br>
+      就是为IPA编织梦想的翅膀。<br>
+      飞舞的笔是心灵与外界交流的窗，<br>
+      精心制作的海报呈现出IPA的精髓，<br>
+      而每个宣传部尽心尽责的我们，<br>
+      为IPA与外面的世界架起了桥梁。 <br>
+      宣传部，欢迎那个才华横溢的你。
+  </div>
+</div>

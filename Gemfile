@@ -34,6 +34,10 @@ gem 'owlcarousel-rails', :git => 'https://github.com/wormful/owlcarousel-rails.g
 
 gem 'devise', '~> 3.2.4'
 
+gem 'rails-i18n', '~> 4.0.0'
+
+gem 'devise-i18n', '~> 0.10.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
