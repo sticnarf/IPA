@@ -26,14 +26,17 @@ window.welcome_ready = ->
     paginationNumbers: true,
     transitionStyle: "fade"
   }
-  $(".class").click ->
-    setTimeout( ->
-      update()
-    , 100)
-  update()
-  $(window).on('resize', ->
+  setInterval( ->
     update()
-  )
-  $("div, img").on('resize', ->
-    update()
-  )
+  , 100)
+  # $(".class").click ->
+  #   setTimeout( ->
+  #     update()
+  #   , 100)
+  # update()
+  # $(window).on('resize', ->
+  #   update()
+  # )
+  # $("div, img").on('resize', ->
+  #   update()
+  # )
