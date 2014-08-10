@@ -1,5 +1,5 @@
 <header>
-  <div id="logo"><%= link_to image_tag("logo.svg"), root_path %></div>
+  <div id="logo"><%= link_to image_tag("http://dn-ipa-public.qbox.me/logo.svg"), root_path %></div>
   <div id="uinfo">
     <% if user_signed_in? %>
     欢迎，<%= current_user.name %> | <%= link_to "登出", destroy_user_session_path, method: "delete" %>
@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <div>
-    <div id="full_name"><%= image_tag "full.svg" %></div>
+    <div id="full_name"><%= image_tag "http://dn-ipa-public.qbox.me/full.svg" %></div>
     <nav active="<%= yield(:active) %>" id="header_nav">
       <ul>
         <li id="nav_intro"><%= link_to "简介", root_path %></li>

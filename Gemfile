@@ -38,6 +38,8 @@ gem 'rails-i18n', '~> 4.0.0'
 
 gem 'devise-i18n', '~> 0.10.4'
 
+gem 'qiniu', '~> 6.3.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
