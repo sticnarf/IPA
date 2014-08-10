@@ -21,7 +21,7 @@
         style="visibility: hidden;"
         <% end %>
         >
-        <a>社员面板</a></li>
+        <%= link_to '社员面板', current_user ? user_path(current_user) : nil %></a></li>
       </ul>
     </nav>
   </div>

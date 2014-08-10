@@ -1,0 +1,10 @@
+<% provide(:active, 'user') %>
+<% content_for :side do %>
+<ul id="first_class">
+  <li><a class="first_li active">账号管理</a></li>
+</ul>
+<% end %>
+<div id="info">
+  <%= image_tag 'default_avatar.gif', id: 'avatar' %>
+  <p id="name"><%= @user.name %></p>
+</div>

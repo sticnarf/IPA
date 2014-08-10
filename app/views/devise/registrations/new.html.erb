@@ -34,16 +34,27 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-6 columns radio">
-      <label>是否为社员</label>
-      <%= f.radio_button :user_type, 'validating' %><label for="user_user_type_validating">是</label>
-      <%= f.radio_button :user_type, 'visitor', checked: true %><label for="user_user_type_visitor">不是</label>
+    <div class="large-6 columns">
+      <div class="large-6 columns radio">
+        <label>是否为社员</label>
+        <%= f.radio_button :user_type, 'validating' %><label for="user_user_type_validating">是</label>
+        <%= f.radio_button :user_type, 'visitor', checked: true %><label for="user_user_type_visitor">不是</label>
+      </div>
     </div>
     <div class="large-6 columns">
-      <label>班级
-        <%= f.text_field :class_name, disabled: true %>
-      </label>
-    </div>
+      <div class="row">
+        <div class="large-6 columns">
+        <label>班级
+          <%= f.text_field :class_name, disabled: true %>
+        </label>
+
+      </div>
+      <div class="large-6 columns">
+        <label>QQ号
+          <%= f.text_field :qq, disabled: true %>
+        </label>
+      </div>
+    </div class="row">
   </div>
   <div class="submit"><%= f.submit "注册", :class => 'button' %></div>
 </div>

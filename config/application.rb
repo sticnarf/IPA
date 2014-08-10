@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module IPA
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -21,3 +22,4 @@ module IPA
     # config.i18n.default_locale = :de
   end
 end
+I18n.enforce_available_locales = false

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'intro/pub' => 'welcome#pub', as: 'pub'
   get 'intro/mfilm' => 'welcome#mfilm', as: 'mfilm'
 
+  resources :users, only: [:show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
