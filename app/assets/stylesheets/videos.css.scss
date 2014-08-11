@@ -1,8 +1,17 @@
 // Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.vjs-big-play-button {
-  top: auto !important;
-  left: 50px !important;
-  bottom: 20px;
+
+
+.videos {
+  .vjs-big-play-button {
+    top: auto !important;
+    left: 50px !important;
+    bottom: 20px;
+  }
+  #main {
+    aside {
+      padding-left: 50px;
+    }
+  }
 }
