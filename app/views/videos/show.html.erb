@@ -1,0 +1,9 @@
+<% provide(:active, 'video') %>
+<% content_for :side do %>
+<% @videos.each do |v| %>
+<ul id="first_class">
+  <li><%= link_to v.name, v, class: "first_li#{" active" if v == @video}" %></li>
+</ul>
+<% end %>
+<% end %>
+<%= videojs_rails sources: { mp4: @video.url, controls: true }, poster: @video.poster %>

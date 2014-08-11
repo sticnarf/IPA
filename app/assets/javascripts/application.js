@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require foundation
 //= require owl.carousel
+//= require video
 //= require_tree .
