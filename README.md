@@ -17,6 +17,12 @@ $ rake db:migrate RAILS_ENV=production
 $ rake assets:precompile RAILS_ENV=production
 ```
 
+**Don't forget to add Qiniu access key and secret key to the `.env` file, format:**
+```
+QINIU_ACCESS_KEY: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+QINIU_SECRET_KEY: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
 Or you just want to update, run:
 
 ```bash
