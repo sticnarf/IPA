@@ -14,7 +14,7 @@
         <li id="nav_intro"><%= link_to "简介", root_path %></li>
         <li id="nav_video"><%= link_to '视频', videos_path %></li>
         <li id="nav_photo"><a>摄影</a></li>
-        <li id="nav_movie"><a>微电影</a></li>
+        <li id="nav_movie"><%= link_to '微电影', mfilms_path %></li>
         <li id="nav_activity"><a>活动</a></li>
         <li id="nav_user"
         <% unless user_signed_in? %>

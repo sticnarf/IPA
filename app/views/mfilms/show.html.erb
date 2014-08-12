@@ -1,0 +1,10 @@
+<% provide(:active, 'movie') %>
+<% content_for :side do %>
+<% @videos.each do |v| %>
+<ul id="first_class">
+  <li><%= link_to v.name, v, class: "first_li#{" active" if v == @video}" %></li>
+</ul>
+<% end %>
+<%= paginate @videos, outer_window: 1, window: 1, params: { controller: 'mfilms', action: 'side'} %>
+<% end %>
+<%= videojs_rails sources: { mp4: @video.url, controls: true }, poster: @video.poster %>

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+
+  get 'videos/side' => 'videos#side'
+
+  get 'mfilms/side' => 'mfilms#side'
+
+  resources :videos
+  resources :mfilms
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,13 +19,13 @@ Rails.application.routes.draw do
   get 'intro/post' => 'welcome#post', as: 'post'
   get 'intro/hp' => 'welcome#hp', as: 'hp'
   get 'intro/pub' => 'welcome#pub', as: 'pub'
-  get 'intro/mfilm' => 'welcome#mfilm', as: 'mfilm'
+  get 'intro/mfilm' => 'welcome#mfilm', as: 'movie'
 
   resources :users, only: [:show]
 
-  get 'videos/side' => 'videos#side'
 
-  resources :videos
+
+
 
 
 

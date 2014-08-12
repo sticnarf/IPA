@@ -1,0 +1,11 @@
+<% if @videos.include? @video %>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="pointer">
+  <polygon points="0,0 5,5 0,10"/>
+</svg>
+<% end %>
+<% @videos.each do |v| %>
+<ul id="first_class">
+  <li><%= link_to v.name, v, class: "first_li#{" active" if v == @video}" %></li>
+</ul>
+<% end %>
+<%= paginate @videos, outer_window: 1, window: 1, params: { controller: 'mfilms', action: 'side'} %>
