@@ -56,7 +56,7 @@ header {
     height: 100%;
     float: left;
     padding-top: 83px;
-    padding-left: 78px;
+    // padding-left: 78px;
     color: rgb(58, 71, 75);
     overflow: auto;
     .pointer {
@@ -68,6 +68,7 @@ header {
     #first_class {
       list-style: none;
       margin: 0;
+      padding-left: 78px;
       font-size: 14px;
     }
     .first_li {

@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  get 'videos/side' => 'videos#side'
+
   resources :videos
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

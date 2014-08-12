@@ -1,7 +1,8 @@
-update_position_all = ->
+window.update_position_all = update_position_all = ->
   $("#main").height($("body").height() - $("header").height() - $("footer").height())
-  $("aside .pointer").css("left", $("aside .active").offset().left - 10)
-  $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2 - 5)
+  if $("aside .pointer").length > 0
+    $("aside .pointer").css("left", $("aside .active").offset().left - 10)
+    $("aside .pointer").css("top", $("aside .active").offset().top + $("aside .active").height() / 2 - 5)
   $("#nav_user").css("left", $("body").width() - $("#panel_nav").width() - 30)
 
 move_pointer = ->

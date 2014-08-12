@@ -9,4 +9,11 @@
     left: 50px !important;
     bottom: 20px;
   }
+  #main{
+    aside {
+      .pagination {
+        display: inline-block;
+      }
+    }
+  }
 }
