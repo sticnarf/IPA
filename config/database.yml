@@ -35,6 +35,7 @@ test:
   username: yilin
 
 production:
+  host: localhost
   adapter: postgresql
   encoding: unicode
   database: IPA_production
