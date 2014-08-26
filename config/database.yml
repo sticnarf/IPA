@@ -38,7 +38,7 @@ production:
   host: localhost
   adapter: postgresql
   encoding: unicode
-  database: IPA_production
+  database: <%= ENV["DATABASE_NAME"] %>
   pool: 5
   username: <%= ENV["DATABASE_USERNAME"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
