@@ -19,4 +19,16 @@
     width: 100%;
     text-align: center;
   }
+  #member_only, .department_only {
+    display: none;
+    .multiple_choices {
+      padding-top: 10px;
+      input {
+        margin-right: 2px;
+      }
+    }
+    .new_item {
+      display: inline;
+    }
+  }
 }

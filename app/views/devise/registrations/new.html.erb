@@ -1,64 +1,283 @@
 <% provide(:active, 'user') %>
 <% content_for :side do %>
-<ul id="first_class">
-  <li><a class="first_li active">用户注册</a></li>
-  <li><%= link_to '用户登录', new_user_session_path, class: 'first_li' %></li>
-</ul>
+  <ul id="first_class">
+    <li><a class="first_li active">用户注册</a></li>
+    <li><%= link_to '用户登录', new_user_session_path, class: 'first_li' %></li>
+  </ul>
 <% end %>
 <div class="title"><h1>用户注册</h1></div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<div class="row">
-  <!-- <%= devise_error_messages! %> -->
   <div class="row">
-    <div class="large-6 columns">
-      <label>Email
-        <%= f.email_field :email, autofocus: true %>
-      </label>
-    </div>
-    <div class="large-6 columns">
-      <label>姓名
-        <%= f.text_field :name %>
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <label>密码
-        <%= f.password_field :password, autocomplete: "off" %>
-      </label>
-    </div>
-    <div class="large-6 columns">
-      <label>重复密码
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <div class="large-6 columns radio">
-        <label>是否为社员</label>
-        <%= f.radio_button :user_type, 'validating' %><label for="user_user_type_validating">是</label>
-        <%= f.radio_button :user_type, 'visitor', checked: true %><label for="user_user_type_visitor">不是</label>
-      </div>
-    </div>
-    <div class="large-6 columns">
-      <div class="row">
-        <div class="large-6 columns">
-        <label>班级
-          <%= f.text_field :class_name, disabled: true %>
+    <!-- <%= devise_error_messages! %> -->
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Email
+          <%= f.email_field :email, autofocus: true %>
         </label>
-
       </div>
       <div class="large-6 columns">
-        <label>QQ号
-          <%= f.text_field :qq, disabled: true %>
+        <label>姓名
+          <%= f.text_field :name %>
         </label>
       </div>
-    </div class="row">
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <label>密码
+          <%= f.password_field :password, autocomplete: "off" %>
+        </label>
+      </div>
+      <div class="large-6 columns">
+        <label>重复密码
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="large-6 columns radio">
+          <label>是否为社员</label>
+          <%= f.radio_button :user_type, 'validating' %>
+          <label for="user_user_type_validating">是</label>
+          <%= f.radio_button :user_type, 'visitor', checked: true %>
+          <label for="user_user_type_visitor">不是</label>
+        </div>
+      </div>
+    </div>
+    <div id="member_only">
+      <div class="row">
+        <div class="large-4 columns">
+          <label>班级
+            <%= f.text_field :class_name %>
+          </label>
+        </div>
+        <div class="large-4 columns">
+          <label>QQ号
+            <%= f.text_field :qq %>
+          </label>
+        </div>
+        <div class="large-4 columns">
+          <label>手机
+            <%= f.telephone_field :tel %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>你想加入的部门</label>
+          <div class="row multiple_choices">
+            <div class="large-2 columns">
+              <label><%= f.check_box :department, { multiple: true }, "photo", nil %>摄影部</label>
+            </div>
+            <div class="large-2 columns">
+              <label><%= f.check_box :department, { multiple: true }, "post", nil %>后期部</label>
+            </div>
+            <div class="large-2 columns">
+              <label><%= f.check_box :department, { multiple: true }, "pub", nil %>宣传部</label>
+            </div>
+            <div class="large-2 columns">
+              <label><%= f.check_box :department, { multiple: true }, "film", nil %>微电影部</label>
+            </div>
+            <div class="large-4 columns">
+              <label><%= f.check_box :department, { multiple: true }, "hp", nil %>硬件程序部</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="photo_only" class="department_only">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>你拥有的摄影设备</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns no_choice">
+                <label><%= f.check_box :photo_equipment, { multiple: true, checked: true }, "none", nil %>啥都没有</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_photo_equipment" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_photo_equipment">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="post_only" class="department_only">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>你会使用的后期软件</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns no_choice">
+                <label><%= f.check_box :post_software, { multiple: true, checked: true }, "none", nil %>啥都不会</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :post_software, { multiple: true }, "AE", nil %>AE</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :post_software, { multiple: true }, "会声会影", nil %>会声会影</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :post_software, { multiple: true }, "Photoshop", nil %>Photoshop</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_post_software" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_post_software">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pub_only" class="department_only">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>你擅长</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns no_choice">
+                <label><%= f.check_box :pub_skill, { multiple: true, checked: true }, "none", nil %>啥也不擅长</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :pub_skill, { multiple: true }, "Photoshop", nil %>Photoshop</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :pub_skill, { multiple: true }, "文字稿", nil %>文字稿</label>
+              </div>
+              <div class="large-1 columns">
+                <label><%= f.check_box :pub_skill, { multiple: true }, "宣讲", nil %>宣讲</label>
+              </div>
+              <div class="large-1 columns">
+                <label><%= f.check_box :pub_skill, { multiple: true }, "手绘", nil %>手绘</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_pub_skill" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_pub_skill">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="film_only" class="department_only">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>你希望成为剧组的</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_post, { multiple: true }, "录像", nil %>录像</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_post, { multiple: true }, "录音", nil %>录音</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_post, { multiple: true }, "场记", nil %>场记</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_post, { multiple: true }, "演员", nil %>演员</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_post, { multiple: true }, "联络员", nil %>联络员</label>
+              </div>
+              <div class="large-2 columns"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>你有什么器材</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns no_choice">
+                <label><%= f.check_box :film_equipment, { multiple: true, checked: true }, "none", nil %>啥也没有</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :film_equipment, { multiple: true }, "DV", nil %>DV</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_film_equipment" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_film_equipment">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="hp_only" class="department_only">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>感兴趣的方向</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns">
+                <label><%= f.check_box :hp_direction, { multiple: true }, "应用程序", nil %>应用程序</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :hp_direction, { multiple: true }, "单片机", nil %>单片机</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :hp_direction, { multiple: true }, "网站", nil %>网站</label>
+              </div>
+              <div class="large-2 columns">
+                <label><%= f.check_box :hp_direction, { multiple: true }, "PC", nil %>PC</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_hp_direction" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_hp_direction">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>会的技术</label>
+            <div class="row multiple_choices">
+              <div class="large-2 columns no_choice">
+                <label><%= f.check_box :hp_tech, { multiple: true, checked: true }, "none", nil %>啥都不会</label>
+              </div>
+              <div class="large-4 columns">
+                <div class="row">
+                  <div class="large-8 columns">
+                    <input type="text" id="new_hp_tech" class="new_item">
+                  </div>
+                  <div class="large-4 columns">
+                    <button class="tiny button" id="add_hp_tech">添加</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="submit"><%= f.submit "注册", :class => 'button' %></div>
+      </div>
+    </div>
   </div>
-  <div class="submit"><%= f.submit "注册", :class => 'button' %></div>
-</div>
-</div>
 <% end %>
 
 <!-- <%= render "devise/shared/links" %> -->
