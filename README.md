@@ -17,7 +17,7 @@ If you've just cloned the repository, you need to run:
 ```bash
 $ bundle install
 $ (echo -e "SECRET_KEY_BASE=\c" && rake secret) >> .env
-```bash
+```
 
 You have to add some secrets to the **`.env`** file.
 
