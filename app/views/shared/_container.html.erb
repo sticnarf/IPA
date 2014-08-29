@@ -3,12 +3,20 @@
     <polygon points="0,0 10,0 5,5"/>
   </svg>
   <% flash.each do |name, msg| %>
-  <% if msg.is_a?(String) %>
-  <div data-alert class="alert-box <%= name.to_s %>">
-  <%= msg %>
-  <a href="#" class="close">&times;</a>
-  </div>
-  <% end %>
+    <% if msg.is_a?(String) %>
+      <div data-alert class="alert-box <%= name.to_s %>">
+        <%= msg %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+    <% if msg.is_a?(Array) %>
+      <% msg.each do |m| %>
+        <div data-alert class="alert-box <%= name.to_s %>">
+          <%= m %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
   <%= yield %>
 </div>

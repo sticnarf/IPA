@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   def index
+    unless current_user.nil?
+      flash.each { |key, value| flash[key] = "欢迎成为一名IPAer！" if value.include? "欢迎" }
+    end
   end
 
   def photo
