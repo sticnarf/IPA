@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :videos
   resources :mfilms
+  resources :activities
+  resources :photos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get 'intro/photo' => 'welcome#photo', as: 'photo'
+  get 'intro/photo' => 'welcome#photo', as: 'photod'
   get 'intro/post' => 'welcome#post', as: 'post'
   get 'intro/hp' => 'welcome#hp', as: 'hp'
   get 'intro/pub' => 'welcome#pub', as: 'pub'
