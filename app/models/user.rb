@@ -10,7 +10,13 @@ class User < ActiveRecord::Base
   validates_presence_of [:class_name, :department], :unless => :visitor?
   validates :qq, format: { with: /\A[1-9][0-9]{4,10}\Z/ }, :unless => :visitor?
   validates :tel, format: { with: /\A[\d,\s,\-]{7,20}\Z/ }, :unless => :visitor?
-  validate :check_departments, :unless => :visitor?
+  validates_presence_of :photo_equipment, :if => :photo?
+  validates_presence_of :post_software, :if => :post?
+  validates_presence_of :pub_skill, :if => :pub?
+  validates_presence_of [:film_post, :film_equipment], :if => :film?
+  validates_presence_of [:hp_direction, :hp_tech], :if => :hp?
+
+  # validate :check_departments, :unless => :visitor?
 
   after_create :check_member
 
@@ -26,21 +32,43 @@ class User < ActiveRecord::Base
     self.visitor! if self.admin?
   end
 
-  def check_departments
-    table = {
-        photo: [:photo_equipment],
-        post: [:post_software],
-        pub: [:pub_skill],
-        film: [:film_post, :film_equipment],
-        hp: [:hp_direction, :hp_tech]
-    }
-    table.each do |key, value|
-      if department and department.include? key
-        value.each do |field|
-          errors[field] << "Empty!" if send(field).blank?
-        end
-      end
-    end
+  def photo?
+    self.department.include? "photo"
   end
+
+  def post?
+    self.department.include? "post"
+  end
+
+  def film?
+    self.department.include? "film"
+  end
+
+  def hp?
+    self.department.include? "hp"
+  end
+
+  def pub?
+    self.department.include? "pub"
+  end
+
+  # def check_departments
+  #   table = {
+  #       photo: [:photo_equipment],
+  #       post: [:post_software],
+  #       pub: [:pub_skill],
+  #       film: [:film_post, :film_equipment],
+  #       hp: [:hp_direction, :hp_tech]
+  #   }
+  #   table.each do |key, value|
+  #     if self.department and self.department.include? key.to_s
+  #       value.each do |field|
+  #         if self.send(field).blank?
+  #           self.errors.add(field, :invalid)
+  #         end
+  #       end
+  #     end
+  #   end
+  # end
 
 end
