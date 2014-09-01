@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
-  def index
+  def show
+
   end
 end

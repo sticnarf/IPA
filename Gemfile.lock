@@ -82,6 +82,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.1)
+      rails
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.4.0)
@@ -218,6 +220,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari (~> 0.16.1)
+  masonry-rails (~> 0.2.1)
   owlcarousel-rails!
   pg (~> 0.17.1)
   qiniu (~> 6.3.2)

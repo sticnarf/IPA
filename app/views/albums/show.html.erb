@@ -1,0 +1,10 @@
+<% provide(:active, 'photo') %>
+<% content_for :side do %>
+  <% @albums.each do |a| %>
+    <ul id="first_class">
+      <li><%= link_to a.name, a, class: "first_li#{" active" if a == @album}" %></li>
+    </ul>
+  <% end %>
+  <%= paginate @albums, outer_window: 1, window: 1, params: { controller: 'albums', action: 'side'} %>
+<% end %>
+TODO!!!!!!!!!
