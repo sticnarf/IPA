@@ -27,6 +27,5 @@ class ApplicationController < ActionController::Base
     fields = [:department, :photo_equipment, :post_software, :post_software,
               :pub_skill, :film_post, :film_equipment, :hp_direction, :hp_tech]
     flash.now[:alert] << message if self.resource.errors.keys.collect { |x| fields.include? x }.inject(:|)
-    # fields.each { |k| self.resource.errors.delete(k) if self.resource.errors.has_key? k }
   end
 end

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates_presence_of [:class_name, :department], :unless => :visitor?
   validates :qq, format: { with: /\A[1-9][0-9]{4,10}\Z/ }, :unless => :visitor?
   validates :tel, format: { with: /\A[\d,\s,\-]{7,20}\Z/ }, :unless => :visitor?
+  validates_presence_of :department, :unless => :visitor?
   validates_presence_of :photo_equipment, :if => :photo?
   validates_presence_of :post_software, :if => :post?
   validates_presence_of :pub_skill, :if => :pub?
@@ -33,42 +34,23 @@ class User < ActiveRecord::Base
   end
 
   def photo?
-    self.department.include? "photo"
+    self.department and self.department.include? "photo"
   end
 
   def post?
-    self.department.include? "post"
+    self.department and self.department.include? "post"
   end
 
   def film?
-    self.department.include? "film"
+    self.department and self.department.include? "film"
   end
 
   def hp?
-    self.department.include? "hp"
+    self.department and self.department.include? "hp"
   end
 
   def pub?
-    self.department.include? "pub"
+    self.department and self.department.include? "pub"
   end
-
-  # def check_departments
-  #   table = {
-  #       photo: [:photo_equipment],
-  #       post: [:post_software],
-  #       pub: [:pub_skill],
-  #       film: [:film_post, :film_equipment],
-  #       hp: [:hp_direction, :hp_tech]
-  #   }
-  #   table.each do |key, value|
-  #     if self.department and self.department.include? key.to_s
-  #       value.each do |field|
-  #         if self.send(field).blank?
-  #           self.errors.add(field, :invalid)
-  #         end
-  #       end
-  #     end
-  #   end
-  # end
 
 end
