@@ -20,11 +20,12 @@ class ApplicationController < ActionController::Base
 
   # Redirect checkbox errors to flash messages
   def redirect_errors
+    message = "请检查您的表单是否已经填写完整"
     flash.now[:alert] = [] if flash.now[:alert].nil?
     flash.now[:alert] = [flash.now[:alert]] unless flash.now[:alert].is_a?(Array)
+    return if flash.now[:alert].include? message
     fields = [:department, :photo_equipment, :post_software, :post_software,
               :pub_skill, :film_post, :film_equipment, :hp_direction, :hp_tech]
-    flash.now[:alert] << "请检查您的表单是否已经填写完整" if self.resource.errors.keys.collect { |x| fields.include? x }.inject(:|)
-    fields.each { |k| self.resource.errors.delete(k) if self.resource.errors.has_key? k }
+    flash.now[:alert] << message if self.resource.errors.keys.collect { |x| fields.include? x }.inject(:|)
   end
 end
