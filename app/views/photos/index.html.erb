@@ -1,10 +1,5 @@
-<% provide(:active, 'photo') %>
-<% content_for :side do %>
-  <% @videos.each do |v| %>
-    <ul id="first_class">
-      <li><%= link_to v.name, v, class: "first_li#{" active" if v == @video}" %></li>
-    </ul>
-  <% end %>
-  <%= paginate @videos, outer_window: 1, window: 1, params: { controller: 'videos', action: 'side'} %>
+<% @photos.each do |p| %>
+  <div class="box">
+    <img src="<%= p.url %>">
+  </div>
 <% end %>
-该页面正在施工中……

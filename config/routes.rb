@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   get 'albums/side' => 'albums#side'
   get 'mfilms/side' => 'mfilms#side'
 
+
   resources :videos
   resources :mfilms
   resources :activities
-  resources :albums
+  resources :albums do
+    resources :photos
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

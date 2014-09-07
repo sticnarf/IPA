@@ -49,7 +49,6 @@ gem 'kaminari', '~> 0.16.1'
 
 gem 'videojs_rails', '~> 4.6.1'
 
-gem 'masonry-rails', '~> 0.2.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

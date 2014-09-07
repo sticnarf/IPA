@@ -17,13 +17,6 @@
  *= require owl.carousel
  *= require owl.theme
  *= require owl.transitions
- *= require 'masonry/basic'
- *= require 'masonry/centered'
- *= require 'masonry/fluid'
- *= require 'masonry/gutters'
- *= require 'masonry/infinitescroll'
- *= require 'masonry/right-to-left'
- *= require 'masonry/transitions'
 
 
  */

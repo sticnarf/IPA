@@ -21,6 +21,38 @@ fix_pagination_a = ->
       timeout : 1500
     })
 
+masonrize = ->
+  msnry = new Masonry('#photo_container', {
+    itemSelector: '.box',
+    gutter: 10,
+  })
+  imagesLoaded($('#photo_container'), ->
+    msnry.layout()
+  )
+
 window.albums_ready = ->
   fix_pagination()
   fix_pagination_a()
+  masonrize()
+  $.ajax(document.location.href + "/photos").done( (data) ->
+    $(data).appendTo($("#photo_container"))
+    masonrize()
+  )
+  page = 1
+  can_next = true
+  $("#container").scroll ->
+    if can_next
+      scroll = $("#container").scrollTop()
+      if $("#photo_container").height() - $("#container").height() - scroll < 100
+        page += 1
+        $.ajax(document.location.href + "/photos?page="+page).done( (data) ->
+          if data == 'No more.'
+            can_next = false
+          else
+            $(data).appendTo($("#photo_container"))
+            masonrize()
+        )
+
+
+
+

@@ -89,6 +89,7 @@ header {
     height: 100%;
     background-color: rgb(153, 153, 153);
     overflow-y: auto;
+    clear: inherit;
     .pointer {
       fill: rgb(58, 71, 75);
       width: 10px;

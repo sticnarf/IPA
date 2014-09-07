@@ -15,6 +15,6 @@
 //= require foundation
 //= require owl.carousel
 //= require video
-//= require masonry/jquery.masonry
-//= require masonry/jquery.infinitescroll.min
+//= require masonry.pkgd.js
+//= require imagesloaded.pkgd.js
 //= require_tree .

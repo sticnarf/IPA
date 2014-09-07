@@ -10,15 +10,15 @@ move_pointer = ->
     $("#container .pointer").animate({
       left: $(this).offset().left - 5 + $(this).width() / 2
     }, {
-      queue: false;
-      duration: 100;
+      queue: false,
+      duration: 100
     })
   $("header nav").mouseleave ->
     $("#container .pointer").animate({
       left: $("header nav .active").offset().left - 5 + $("header nav .active").width() / 2
     }, {
-      queue: false;
-      duration: 200;
+      queue: false,
+      duration: 200
     })
 
 bind_listener_all = ->
