@@ -48,6 +48,8 @@ gem 'rails_admin-i18n', '~> 0.0.9'
 gem 'kaminari', '~> 0.16.1'
 
 gem 'videojs_rails', '~> 4.6.1'
+
+gem 'browsernizer', '~> 0.2.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
