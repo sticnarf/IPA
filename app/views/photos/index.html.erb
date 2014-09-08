@@ -1,5 +1,7 @@
 <% @photos.each do |p| %>
-  <div class="box">
-    <img src="<%= p.url %>">
-  </div>
+  <li class="box">
+    <a href="<%= p.url %>">
+      <img src="<%= p.url %>">
+    </a>
+  </li>
 <% end %>

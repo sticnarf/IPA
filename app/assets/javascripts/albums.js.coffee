@@ -29,6 +29,7 @@ masonrize = ->
   imagesLoaded($('#photo_container'), ->
     msnry.layout()
   )
+  $(document).foundation()
 
 window.albums_ready = ->
   fix_pagination()

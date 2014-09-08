@@ -7,4 +7,4 @@
   <% end %>
   <%= paginate @albums, outer_window: 1, window: 1, params: { controller: 'albums', action: 'side'} %>
 <% end %>
-<div id="photo_container" class="transitions-enabled"></div>
+<ul id="photo_container" class="transitions-enabled clearing-thumbs" data-clearing></ul>
