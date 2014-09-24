@@ -29,7 +29,19 @@ masonrize = ->
   imagesLoaded($('#photo_container'), ->
     msnry.layout()
   )
-  $(document).foundation()
+
+window.load_next_page = ->
+  if window.can_next
+    scroll = $("#container").scrollTop()
+    if $("#photo_container").height() - $("#container").height() - scroll < 100
+      window.page += 1
+      $.ajax(document.location.href + "/photos?page="+window.page).done( (data) ->
+        if data == 'No more.'
+          window.can_next = false
+        else
+          $(data).appendTo($("#photo_container"))
+          masonrize()
+      )
 
 window.albums_ready = ->
   fix_pagination()
@@ -39,20 +51,11 @@ window.albums_ready = ->
     $(data).appendTo($("#photo_container"))
     masonrize()
   )
-  page = 1
-  can_next = true
+  window.page = 1
+  window.can_next = true
   $("#container").scroll ->
-    if can_next
-      scroll = $("#container").scrollTop()
-      if $("#photo_container").height() - $("#container").height() - scroll < 100
-        page += 1
-        $.ajax(document.location.href + "/photos?page="+page).done( (data) ->
-          if data == 'No more.'
-            can_next = false
-          else
-            $(data).appendTo($("#photo_container"))
-            masonrize()
-        )
+    window.load_next_page()
+
 
 
 

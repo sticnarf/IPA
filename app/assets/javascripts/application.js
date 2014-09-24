@@ -17,4 +17,5 @@
 //= require video
 //= require masonry.pkgd.js
 //= require imagesloaded.pkgd.js
+//= require lightbox.js
 //= require_tree .

@@ -1,7 +1,7 @@
 <% @photos.each do |p| %>
-  <li class="box">
-    <a href="<%= p.url %>">
+  <div class="box">
+    <a href="<%= p.url %>" data-lightbox="images" data-title="My caption">
       <img src="<%= p.url %>">
     </a>
-  </li>
+  </div>
 <% end %>

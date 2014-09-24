@@ -125,3 +125,24 @@ footer {
 a:hover {
   color: rgb(67, 150, 234);
 }
+
+//overrides lightbox url
+body:after {
+  content: image-url("close.png") image-url("loading.gif") image-url("prev.png") image-url("next.png") !important;
+}
+
+.lb-cancel {
+  background: image-url("loading.gif") no-repeat !important;
+}
+
+.lb-nav a.lb-prev {
+  background: image-url("prev.png") left 48% no-repeat !important;
+}
+
+.lb-nav a.lb-next {
+  background: image-url("next.png") right 48% no-repeat !important;
+}
+
+.lb-data .lb-close {
+  background: image-url("close.png") top right no-repeat !important;
+}
