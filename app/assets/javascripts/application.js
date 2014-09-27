@@ -15,7 +15,7 @@
 //= require foundation
 //= require owl.carousel
 //= require video
-//= require masonry.pkgd.js
-//= require imagesloaded.pkgd.js
-//= require lightbox.js
+//= require masonry.pkgd
+//= require imagesloaded.pkgd
+//= require jquery.fancybox
 //= require_tree .

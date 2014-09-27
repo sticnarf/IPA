@@ -29,6 +29,10 @@ masonrize = ->
   imagesLoaded($('#photo_container'), ->
     msnry.layout()
   )
+  $(".fancybox").fancybox {
+    openEffect: 'elastic',
+    closeEffect: 'elastic'
+  }
 
 window.load_next_page = ->
   if window.can_next

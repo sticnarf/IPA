@@ -126,23 +126,32 @@ a:hover {
   color: rgb(67, 150, 234);
 }
 
-//overrides lightbox url
-body:after {
-  content: image-url("close.png") image-url("loading.gif") image-url("prev.png") image-url("next.png") !important;
+//overrides fancybox url
+#fancybox-loading div {
+  background: image-url('fancybox_loading.gif') center center no-repeat !important;
 }
 
-.lb-cancel {
-  background: image-url("loading.gif") no-repeat !important;
+.fancybox-nav {
+  background: transparent image-url('blank.gif') !important; /* helps IE */
 }
 
-.lb-nav a.lb-prev {
-  background: image-url("prev.png") left 48% no-repeat !important;
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: image-url('fancybox_sprite@2x.png') !important;
+  }
+
+  #fancybox-loading div {
+    background-image: image-url('fancybox_loading@2x.gif') !important;
+  }
 }
 
-.lb-nav a.lb-next {
-  background: image-url("next.png") right 48% no-repeat !important;
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url('fancybox_sprite.png') !important;
 }
 
-.lb-data .lb-close {
-  background: image-url("close.png") top right no-repeat !important;
+.fancybox-overlay {
+  background: image-url('fancybox_overlay.png') !important;
 }

@@ -1,6 +1,6 @@
 <% @photos.each do |p| %>
   <div class="box">
-    <a href="<%= p.url %>" data-lightbox="images" data-title="My caption">
+    <a class="fancybox" rel="gallery" href="<%= p.url %>" title="XXXXXXX">
       <img src="<%= p.url %>">
     </a>
   </div>
