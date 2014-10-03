@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg', '~> 0.17.1'
@@ -41,13 +41,13 @@ gem 'devise-i18n', '~> 0.10.4'
 
 gem 'qiniu', '~> 6.3.2'
 
-gem 'rails_admin', '~> 0.6.2'
-
-gem 'rails_admin-i18n', '~> 0.0.9'
-
 gem 'kaminari', '~> 0.16.1'
 
 gem 'videojs_rails', '~> 4.6.1'
+
+gem 'jquery.fileupload-rails', '~> 1.10.1'
+
+gem "font-awesome-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

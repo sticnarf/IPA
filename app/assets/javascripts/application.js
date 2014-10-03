@@ -18,4 +18,5 @@
 //= require masonry.pkgd
 //= require imagesloaded.pkgd
 //= require jquery.fancybox
+//= require jquery.fileupload
 //= require_tree .

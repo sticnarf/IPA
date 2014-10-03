@@ -8,3 +8,11 @@
   margin-left: 74px;
   font-size: 20px;
 }
+.button input[type="file"] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
+}
