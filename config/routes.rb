@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'intro/hp' => 'welcome#hp', as: 'hp'
   get 'intro/pub' => 'welcome#pub', as: 'pub'
   get 'intro/mfilm' => 'welcome#mfilm', as: 'movie'
+  get 'upload/token' => 'upload#token'
 
   resources :users, only: [:show]
 

@@ -4,37 +4,36 @@
     <li><a class="first_li active">照片上传</a></li>
   </ul>
 <% end %>
-<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
-  <div class="row fileupload-buttonbar">
+<form id="fileupload" action="http://upload.qiniu.com/" method="POST" enctype="multipart/form-data">
+  <div class="row">
     <div class="large-7 columns">
-      <span class="button small fileinput-button">
+      <span class="button small">
         <%= fa_icon "plus" %>
-        <span>Add files...</span>
+        <span>添加文件</span>
         <input type="file" name="files[]" class="button" multiple>
       </span>
-      <button type="submit" class="button small start">
+      <button class="button small start">
         <%= fa_icon "upload" %>
-        <span>Start upload</span>
+        <span>开始上传</span>
       </button>
-      <button type="reset" class="button small cancel">
-        <%= fa_icon "ban" %>
-        <span>Cancel upload</span>
-      </button>
-      <button type="button" class="button small delete">
+      <button class="button small">
         <%= fa_icon "trash" %>
-        <span>Delete</span>
+        <span>清空</span>
       </button>
-      <span class="fileupload-process"></span>
     </div>
-    <div class="large-5 columns fileupload-progress fade">
+    <div class="large-5 columns ">
       <div class="progress round">
         <span class="meter" style="width: 0%"></span>
       </div>
     </div>
   </div>
-  <table role="presentation" class="table table-striped">
-    <tbody class="files"></tbody>
-  </table>
+  <div class="row">
+    <div class="large-12 columns">
+      <table class="presentation">
+        <tbody class="files"></tbody>
+      </table>
+    </div>
+  </div>
 </form>
 <!--<form method="post" action="http://upload.qiniu.com/"-->
 <!--enctype="multipart/form-data">-->

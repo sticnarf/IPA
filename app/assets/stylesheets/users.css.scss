@@ -16,3 +16,21 @@
   cursor: pointer;
   opacity: 0;
 }
+
+.preview img {
+  width: 75px;
+  height: 75px;
+}
+
+.presentation {
+  width: 100%;
+  border: none;
+}
+
+#fileupload {
+  margin-top: 78px;
+}
+
+.progress.round {
+  margin-top: 10px;
+}
