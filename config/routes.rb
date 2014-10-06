@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'intro/pub' => 'welcome#pub', as: 'pub'
   get 'intro/mfilm' => 'welcome#mfilm', as: 'movie'
   get 'upload/token' => 'upload#token'
+  post 'upload/callback' => 'upload#callback'
 
   resources :users, only: [:show]
 
