@@ -45,8 +45,6 @@ gem 'qiniu', '~> 6.3.2'
 
 gem 'rails_admin', '~> 0.6.2'
 
-gem 'rails_admin-i18n', '~> 0.0.9'
-
 gem 'kaminari', '~> 0.16.1'
 
 gem 'videojs_rails', '~> 4.6.1'
