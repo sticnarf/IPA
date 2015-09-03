@@ -32,8 +32,6 @@ gem 'spring',        group: :development
 
 gem 'foundation-rails', '~> 5.3.1.0'
 
-gem 'dotenv-rails', '~> 0.11.1'
-
 gem 'owlcarousel-rails', :git => 'https://github.com/wormful/owlcarousel-rails.git'
 
 gem 'devise', '~> 3.2.4'
