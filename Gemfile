@@ -43,7 +43,7 @@ gem 'devise-i18n', '~> 0.10.4'
 
 gem 'qiniu', '~> 6.3.2'
 
-gem 'rails_admin', '~> 0.6.2'
+gem 'rails_admin', '~> 0.7.0'
 
 gem 'kaminari', '~> 0.16.1'
 
